@@ -7,9 +7,9 @@ export function LandingPage()
     <div style={{
       display: "flex",
       justifyContent: "center",
-      width: "100%",
+      width: "100wh",
       height: "100vh",
-      marginTop: "20px"
+      marginTop: "5%"
     }}>
       <Container>
           <Head>

@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 export function Appbar()
 {
     return (
-        <AppBar position="static" style={{backgroundColor: "black", color: "#FF8F8F"}}>
+        <AppBar position="sticky" style={{backgroundColor: "black", color: "#FF8F8F"}}>
           <Toolbar>
             <IconButton edge="start" color="inherit" aria-label="menu">
               <MenuIcon />
