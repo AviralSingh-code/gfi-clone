@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "Github-Good-First-Website",
   "private": true,
   "scripts": {
     "build": "turbo build",
