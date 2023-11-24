@@ -10,6 +10,7 @@
   "devDependencies": {
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
+    "@types/jsonwebtoken": "^9.0.5",
     "prettier": "^3.1.0",
     "turbo": "latest"
   },
@@ -20,6 +21,7 @@
   ],
   "dependencies": {
     "@mui/icons-material": "^5.14.18",
-    "axios": "^1.6.2"
+    "axios": "^1.6.2",
+    "jsonwebtoken": "^9.0.2"
   }
 }
