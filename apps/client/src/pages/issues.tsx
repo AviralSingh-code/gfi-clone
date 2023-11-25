@@ -33,13 +33,24 @@ function Issues()
         }).then(callback);
     },[]);
 
-    console.log(userSolvedIssues);
 
     return <div>
         {
             issues.flatMap((repoSpecificIssues: any) => {
                 return repoSpecificIssues.allIssues.map((repoSpecifcSingleissueItem: any) => {
-                    return <IssueCard issueHelper={repoSpecifcSingleissueItem} userHelper={userSolvedIssues}></IssueCard>;
+                    return <IssueCard issueHelper={repoSpecifcSingleissueItem} userHelper={userSolvedIssues} onMarkClick={ (issueId)=>{
+                        function callback(res)
+                        {
+                            console.log("Successful !!");
+                        }
+                        axios.get('/api/solveIssue',{
+                            headers:{
+                                "Content-Type": "application/json",
+                                "issueId": issueId, 
+                                "username": userNameValue
+                            }
+                        }).then(callback);
+                    }}></IssueCard>;
                 });
             })
         }

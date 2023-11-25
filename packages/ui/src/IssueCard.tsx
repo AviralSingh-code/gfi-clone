@@ -5,9 +5,10 @@ export function IssueCard(props)
     let flag: Boolean = false;
     for(let i = 0; i < props.userHelper.length; i++)
     {
-        if((props.userHelper.issueTitle == props.issueHelper.issueTitle) && (props.userHelper.issueUrl == props.issueHelper.issueUrl))
+        if((props.userHelper[i] == props.issueHelper._id))
         {
             flag = true;
+            break;
         }
     }
 
@@ -41,7 +42,7 @@ function StateOne(props)
                 <Button
                     size="large" 
                     variant="contained"
-                >Edit</Button>
+                >Mark Solved</Button>
             </div>
         </Card>
     );
@@ -65,7 +66,10 @@ function StateTwo(props)
                 <Button
                     size="large" 
                     variant="contained"
-                >Edit</Button>
+                onClick={()=>{
+                    // props.props.onMarkClick(props.props.issueHelper.issueTitle, props.props.issueHelper.issueUrl);
+                    props.props.onMarkClick(props.props.issueHelper._id);
+                }}>Mark Solved</Button>
             </div>
         </Card>
     );

@@ -15,7 +15,8 @@ export default async function handler(
     const response = req.headers.username;
     if(response)
     {
-      const result = await User.findOne({username: response}).populate('solvedIssues');
+      const result = await User.findOne({username: response});
+      console.log(result.solvedIssues);
       if(result)
       {
           res.json({solvedIssues: result.solvedIssues || []})
@@ -25,5 +26,6 @@ export default async function handler(
           res.json({message: "User not found"});
       }
     }
+    res.json({message: "Done !!"});
 }
     
