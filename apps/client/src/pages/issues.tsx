@@ -38,7 +38,7 @@ function Issues()
         {
             issues.flatMap((repoSpecificIssues: any) => {
                 return repoSpecificIssues.allIssues.map((repoSpecifcSingleissueItem: any) => {
-                    return <IssueCard issueHelper={repoSpecifcSingleissueItem} userHelper={userSolvedIssues} onMarkClick={ (issueId)=>{
+                    return <IssueCard issueHelper={repoSpecifcSingleissueItem} userHelper={userSolvedIssues} onMarkClick={ (issueUrl)=>{
                         function callback(res)
                         {
                             console.log("Successful !!");
@@ -46,7 +46,7 @@ function Issues()
                         axios.get('/api/solveIssue',{
                             headers:{
                                 "Content-Type": "application/json",
-                                "issueId": issueId, 
+                                "issueurl": issueUrl, 
                                 "username": userNameValue
                             }
                         }).then(callback);

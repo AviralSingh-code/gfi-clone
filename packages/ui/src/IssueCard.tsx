@@ -5,7 +5,7 @@ export function IssueCard(props)
     let flag: Boolean = false;
     for(let i = 0; i < props.userHelper.length; i++)
     {
-        if((props.userHelper[i] == props.issueHelper._id))
+        if((props.userHelper[i] == props.issueHelper.issueUrl))
         {
             flag = true;
             break;
@@ -68,7 +68,7 @@ function StateTwo(props)
                     variant="contained"
                 onClick={()=>{
                     // props.props.onMarkClick(props.props.issueHelper.issueTitle, props.props.issueHelper.issueUrl);
-                    props.props.onMarkClick(props.props.issueHelper._id);
+                    props.props.onMarkClick(props.props.issueHelper.issueUrl);
                 }}>Mark Solved</Button>
             </div>
         </Card>

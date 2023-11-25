@@ -16,7 +16,6 @@ export default async function handler(
     if(response)
     {
       const result = await User.findOne({username: response});
-      console.log(result.solvedIssues);
       if(result)
       {
           res.json({solvedIssues: result.solvedIssues || []})

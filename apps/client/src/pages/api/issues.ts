@@ -9,7 +9,7 @@ import { Issue } from 'db';
 
 const owner = 'NativeScript';
 const repo = 'NativeScript';
-const token = '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';
+const token = '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';
 
 const apiUrl = `https://api.github.com/repos/${owner}/${repo}/issues?labels=good%20first%20issue&&state=open`;
 

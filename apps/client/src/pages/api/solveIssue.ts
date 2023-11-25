@@ -31,7 +31,7 @@ export default async function handler(
     //     }
     // }
 
-    const issue = req.headers.issueid;
+    const issue = req.headers.issueurl;
     const resultUser = await User.findOne({username: req.headers.username});
     if(resultUser)
     {
