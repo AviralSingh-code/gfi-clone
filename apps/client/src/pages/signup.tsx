@@ -20,7 +20,7 @@ export default function SignupPage()
             let data = response.data;
             if(!data.token)
             {
-                router.push('/oopssignup');
+                router.push('/oopsSignup');
             }
             else{
                 localStorage.setItem("token", data.token);
@@ -28,7 +28,6 @@ export default function SignupPage()
                     isLoading: false,
                     userEmail: username
                 });
-                // router.push("/courses");
                 router.push("/");
             }
         }} />

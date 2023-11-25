@@ -7,7 +7,8 @@
     "./code": "./src/code.tsx",
     "./Appbar": "./src/Appbar.tsx",
     "./IssueCard": "./src/IssueCard.tsx",
-    "./Signup": "./src/Signup.tsx"
+    "./Signup": "./src/Signup.tsx",
+    "./Signin": "./src/Signin.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
