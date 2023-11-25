@@ -6,7 +6,8 @@
     "./LandingPage": "./src/LandingPage.tsx",
     "./code": "./src/code.tsx",
     "./Appbar": "./src/Appbar.tsx",
-    "./IssueCard": "./src/IssueCard.tsx"
+    "./IssueCard": "./src/IssueCard.tsx",
+    "./Signup": "./src/Signup.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
