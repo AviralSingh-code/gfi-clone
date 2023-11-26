@@ -7,11 +7,6 @@ import { Issue } from 'db';
 //   name: string
 // }
 
-const owner = 'NativeScript';
-const repo = 'NativeScript';
-const token = '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';
-
-const apiUrl = `https://api.github.com/repos/${owner}/${repo}/issues?labels=good%20first%20issue&&state=open`;
 
 export default async function handler(
   req: NextApiRequest,
@@ -19,12 +14,14 @@ export default async function handler(
 ) {
     await connectDb();
 
-
     if(req.method == "POST")
     {
+        const owner = req.headers.owner;
+        const repo = req.headers.repo;
+        const apiUrl = `https://api.github.com/repos/${owner}/${repo}/issues?labels=good%20first%20issue&&state=open`;
         const issueList = await axios.get(apiUrl, {
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
             }
         });
     

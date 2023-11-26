@@ -1,7 +1,7 @@
 import { AppBar, Button, Card, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 
-export function Appbar({userState, onSigninParent, onSignupParent, onSignoutParent})
+export function Appbar({userState, onSigninParent, onSignupParent, onSignoutParent, onAddNewProjectParent})
 {
   if(userState == null)
   {
@@ -9,7 +9,7 @@ export function Appbar({userState, onSigninParent, onSignupParent, onSignoutPare
   }
   else
   {
-    return ( <StateTwo onSignout={()=>{onSignoutParent();}} userState={userState}></StateTwo> );
+    return ( <StateTwo onSignout={()=>{onSignoutParent();}} userState={userState} onAddNewProject={()=>{onAddNewProjectParent();}}></StateTwo> );
   }
 }
 
@@ -25,11 +25,14 @@ function StateOne(props)
             <Typography variant="h6" style={{ flexGrow: 1 }} sx={{fontStyle: 'italic'}}>
               GfI
             </Typography>
-            <Button color="inherit"
+            <Button style={{backgroundColor: "#FF8F8F",
+            marginRight: 10}}
+            variant="contained"
             onClick={()=>{
               props.onSignup();
             }}>SIGN UP</Button>
             <Button color="inherit"
+            variant="outlined"
              onClick={()=>{
               props.onSignin();
             }}>SIGN IN</Button>
@@ -51,10 +54,18 @@ function StateTwo(props)
             </Typography>
             <div style={{
               display: "flex",
-              justifyContent: "center"
+              justifyContent: "space-between"
             }}>
               <p style={{color: "#FF8F8F"}}>Hi {props.userState}</p>
+              <Button style={{backgroundColor: "#FF8F8F",
+            marginRight: 10,
+            marginLeft: 10}}
+              variant="contained"
+              onClick={()=>{
+                props.onAddNewProject();
+              }}>ADD NEW PROJECT</Button>
               <Button color="inherit"
+            variant="outlined"
               onClick={()=>{
                 props.onSignout();
               }}>SIGN OUT</Button>

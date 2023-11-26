@@ -49,6 +49,9 @@ function HeaderComponent({ Component, pageProps })
             userEmail: null
           });
           router.push("/");
+        }}
+        onAddNewProjectParent={()=>{
+          router.push("/addproject");
         }}></Appbar> 
         <Component {...pageProps} />
     </div>
