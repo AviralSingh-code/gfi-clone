@@ -1,13 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { IssueCard } from "ui/IssueCard";
-import { useRecoilValue } from "recoil";
-import { userEmailState } from "store";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { allIssues, solvedIssues, userEmailState } from "store";
 function Issues()
 {
     const[issues, setIssues] = useState([]);
-    const[userSolvedIssues, setUserSolvedIssues] = useState([]);
+    // const[userSolvedIssues, setUserSolvedIssues] = useState([]);
     const userNameValue = useRecoilValue(userEmailState);
+    // const setIssues = useSetRecoilState(allIssues);
+    const setUserSolvedIssues = useSetRecoilState(solvedIssues);
+    // const issues = useRecoilValue(allIssues);
+    const userSolvedIssues = useRecoilValue(solvedIssues);
     useEffect(()=>{
         function callback(res)
         {
@@ -42,6 +46,13 @@ function Issues()
                         function callback(res)
                         {
                             console.log("Successful !!");
+                            var tempHold = [];
+                            for(let i = 0; i < userSolvedIssues.length; i++)
+                            {
+                                tempHold.push(userSolvedIssues[i]);
+                            }
+                            tempHold.push(issueUrl);
+                            setUserSolvedIssues(tempHold);
                         }
                         axios.get('/api/solveIssue',{
                             headers:{
