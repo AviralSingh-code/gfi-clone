@@ -25,6 +25,10 @@ export default async function handler(
           res.json({message: "User not found"});
       }
     }
-    res.json({message: "Done !!"});
+    else
+    {
+      res.json({message: "Done !!"});
+    }
+    
 }
     
