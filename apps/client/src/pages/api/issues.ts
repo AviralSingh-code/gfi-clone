@@ -16,8 +16,9 @@ export default async function handler(
 
     if(req.method == "POST")
     {
-        const owner = req.headers.owner;
-        const repo = req.headers.repo;
+        const owner = req.body.owner;
+        const repo = req.body.repo;
+        // console.log(req.body);
         const apiUrl = `https://api.github.com/repos/${owner}/${repo}/issues?labels=good%20first%20issue&&state=open`;
         const issueList = await axios.get(apiUrl, {
             headers: {

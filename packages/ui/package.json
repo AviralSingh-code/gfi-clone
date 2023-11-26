@@ -8,7 +8,8 @@
     "./Appbar": "./src/Appbar.tsx",
     "./IssueCard": "./src/IssueCard.tsx",
     "./Signup": "./src/Signup.tsx",
-    "./Signin": "./src/Signin.tsx"
+    "./Signin": "./src/Signin.tsx",
+    "./AddProjectPage": "./src/AddProjectPage.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
