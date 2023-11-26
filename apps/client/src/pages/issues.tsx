@@ -42,8 +42,8 @@ function Issues()
         {
             issues.flatMap((repoSpecificIssues: any) => {
                 return (
-                    <>
-                        <div>Repository Name: {repoSpecificIssues.repoName}</div>
+                    <div style={{border: "2px solid #FF8F8F", margin: "20px", padding: "10px" ,borderRadius: "10px"}}>
+                        <div style={{color: "#FF8F8F", fontSize: "1.5em", fontWeight: "bold"}}>{repoSpecificIssues.ownerName}/{repoSpecificIssues.repoName}</div>
                         {repoSpecificIssues.allIssues.map((repoSpecifcSingleissueItem: any) => (
                             <IssueCard
                                 issueHelper={repoSpecifcSingleissueItem}
@@ -68,7 +68,7 @@ function Issues()
                                 }}
                             ></IssueCard>
                         ))}
-                    </>
+                    </div>
                 );
             })
         }

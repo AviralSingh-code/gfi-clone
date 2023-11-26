@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema({
 });
 
 const issueSchema = new mongoose.Schema({
+    ownerName: String,
     repoName: String,
     allIssues: [{issueTitle: String , issueUrl: String}]
 });

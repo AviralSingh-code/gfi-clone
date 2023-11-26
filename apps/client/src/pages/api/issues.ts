@@ -33,10 +33,10 @@ export default async function handler(
         }
     
         console.log(hold);
-        const result = await Issue.findOne({repoName: repo});
+        const result = await Issue.findOne({ownerName: owner, repoName: repo});
         if(!result)
         {
-            const createIssueList = new Issue({repoName: repo, allIssues: hold});
+            const createIssueList = new Issue({ownerName: owner, repoName: repo, allIssues: hold});
             await createIssueList.save();
         }
         else
