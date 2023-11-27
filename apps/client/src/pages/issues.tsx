@@ -66,6 +66,27 @@ function Issues()
                                         }
                                     }).then(callback);
                                 }}
+
+                                onUnMarkClick={(issueUrl) => {
+                                    function callback(res) {
+                                        console.log("Successful !!");
+                                        var tempHold = [];
+                                        for (let i = 0; i < userSolvedIssues.length; i++) {
+                                            if(userSolvedIssues[i] != issueUrl)
+                                            {
+                                                tempHold.push(userSolvedIssues[i]);
+                                            }
+                                        }
+                                        setUserSolvedIssues(tempHold);
+                                    }
+                                    axios.delete('/api/solveIssue', {
+                                        headers: {
+                                            "Content-Type": "application/json",
+                                            "issueurl": issueUrl,
+                                            "username": userNameValue
+                                        }
+                                    }).then(callback);
+                                }}
                             ></IssueCard>
                         ))}
                     </div>

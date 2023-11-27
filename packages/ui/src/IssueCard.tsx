@@ -1,4 +1,5 @@
-import { Button, Card, Link, Typography } from "@mui/material";
+import { Button, Card, Checkbox, Link, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 export function IssueCard(props)
 {
@@ -39,10 +40,17 @@ function StateOne(props)
                 justifyContent: "center",
                 margin: 5
             }}>
-                <Button
+                {/* <Button
                     size="large" 
                     variant="contained"
-                >Mark Solved</Button>
+                >Mark Solved</Button> */}
+                <Checkbox
+                checked={true}
+                onChange={()=>{
+                    props.props.onUnMarkClick(props.props.issueHelper.issueUrl);
+                }}
+                inputProps={{ 'aria-label': 'controlled' }}
+                />
             </div>
         </Card>
     );
@@ -63,13 +71,21 @@ function StateTwo(props)
                 justifyContent: "center",
                 margin: 5
             }}>
-                <Button
+                {/* <Button
                     size="large" 
                     variant="contained"
                 onClick={()=>{
                     // props.props.onMarkClick(props.props.issueHelper.issueTitle, props.props.issueHelper.issueUrl);
                     props.props.onMarkClick(props.props.issueHelper.issueUrl);
-                }}>Mark Solved</Button>
+                }}>Mark Solved</Button> */}
+                <Checkbox
+                checked={false}
+                onChange={()=>{
+                    props.props.onMarkClick(props.props.issueHelper.issueUrl);
+                    // props.setChecked(false);
+                }}
+                inputProps={{ 'aria-label': 'controlled' }}
+                />
             </div>
         </Card>
     );
