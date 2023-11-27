@@ -30,22 +30,20 @@ function StateOne(props)
         <Card style={{
             border: "2px solid black",
             margin: 10,
-            width: 300,
             minHeight: 100,
+            borderRadius: "10px",
             backgroundColor: "#9ADE7B"
         }}>
-            <Link href={props.props.issueHelper.issueUrl}>{props.props.issueHelper.issueTitle}</Link>
+            
             <div style={{
                 display: "flex",
-                justifyContent: "center",
+                justifyContent: "space-between",
                 margin: 5
             }}>
-                {/* <Button
-                    size="large" 
-                    variant="contained"
-                >Mark Solved</Button> */}
+                <a style={{textDecoration: "none", color: "black", fontWeight: "bolder"}} href={props.props.issueHelper.issueUrl} target="_blank">{props.props.issueHelper.issueTitle}</a>
                 <Checkbox
                 checked={true}
+                color="default"
                 onChange={()=>{
                     props.props.onUnMarkClick(props.props.issueHelper.issueUrl);
                 }}
@@ -62,22 +60,16 @@ function StateTwo(props)
         <Card style={{
             border: "2px solid black",
             margin: 10,
-            width: 300,
+            borderRadius: "10px",
             minHeight: 100,
         }}>
-            <Link href={props.props.issueHelper.issueUrl}>{props.props.issueHelper.issueTitle}</Link>
+            
             <div style={{
                 display: "flex",
-                justifyContent: "center",
+                justifyContent: "space-between",
                 margin: 5
             }}>
-                {/* <Button
-                    size="large" 
-                    variant="contained"
-                onClick={()=>{
-                    // props.props.onMarkClick(props.props.issueHelper.issueTitle, props.props.issueHelper.issueUrl);
-                    props.props.onMarkClick(props.props.issueHelper.issueUrl);
-                }}>Mark Solved</Button> */}
+                <a style={{textDecoration: "none", color: "white", fontWeight: "bolder"}} href={props.props.issueHelper.issueUrl} target="_blank">{props.props.issueHelper.issueTitle}</a>
                 <Checkbox
                 checked={false}
                 onChange={()=>{

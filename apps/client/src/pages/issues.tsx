@@ -42,53 +42,53 @@ function Issues()
         {
             issues.flatMap((repoSpecificIssues: any) => {
                 return (
-                    <div style={{border: "2px solid #FF8F8F", margin: "20px", padding: "10px" ,borderRadius: "10px"}}>
+                    <div style={{border: "2px solid #FF8F8F", margin: "5%", padding: "10px" ,borderRadius: "10px"}}>
                         <div style={{color: "#FF8F8F", fontSize: "1.5em", fontWeight: "bold"}}>{repoSpecificIssues.ownerName}/{repoSpecificIssues.repoName}</div>
-                        {repoSpecificIssues.allIssues.map((repoSpecifcSingleissueItem: any) => (
-                            <IssueCard
-                                issueHelper={repoSpecifcSingleissueItem}
-                                userHelper={userSolvedIssues}
-                                onMarkClick={(issueUrl) => {
-                                    function callback(res) {
-                                        console.log("Successful !!");
-                                        var tempHold = [];
-                                        for (let i = 0; i < userSolvedIssues.length; i++) {
-                                            tempHold.push(userSolvedIssues[i]);
-                                        }
-                                        tempHold.push(issueUrl);
-                                        setUserSolvedIssues(tempHold);
-                                    }
-                                    axios.get('/api/solveIssue', {
-                                        headers: {
-                                            "Content-Type": "application/json",
-                                            "issueurl": issueUrl,
-                                            "username": userNameValue
-                                        }
-                                    }).then(callback);
-                                }}
-
-                                onUnMarkClick={(issueUrl) => {
-                                    function callback(res) {
-                                        console.log("Successful !!");
-                                        var tempHold = [];
-                                        for (let i = 0; i < userSolvedIssues.length; i++) {
-                                            if(userSolvedIssues[i] != issueUrl)
-                                            {
+                            {repoSpecificIssues.allIssues.map((repoSpecifcSingleissueItem: any) => (
+                                <IssueCard
+                                    issueHelper={repoSpecifcSingleissueItem}
+                                    userHelper={userSolvedIssues}
+                                    onMarkClick={(issueUrl) => {
+                                        function callback(res) {
+                                            console.log("Successful !!");
+                                            var tempHold = [];
+                                            for (let i = 0; i < userSolvedIssues.length; i++) {
                                                 tempHold.push(userSolvedIssues[i]);
                                             }
+                                            tempHold.push(issueUrl);
+                                            setUserSolvedIssues(tempHold);
                                         }
-                                        setUserSolvedIssues(tempHold);
-                                    }
-                                    axios.delete('/api/solveIssue', {
-                                        headers: {
-                                            "Content-Type": "application/json",
-                                            "issueurl": issueUrl,
-                                            "username": userNameValue
+                                        axios.get('/api/solveIssue', {
+                                            headers: {
+                                                "Content-Type": "application/json",
+                                                "issueurl": issueUrl,
+                                                "username": userNameValue
+                                            }
+                                        }).then(callback);
+                                    }}
+
+                                    onUnMarkClick={(issueUrl) => {
+                                        function callback(res) {
+                                            console.log("Successful !!");
+                                            var tempHold = [];
+                                            for (let i = 0; i < userSolvedIssues.length; i++) {
+                                                if(userSolvedIssues[i] != issueUrl)
+                                                {
+                                                    tempHold.push(userSolvedIssues[i]);
+                                                }
+                                            }
+                                            setUserSolvedIssues(tempHold);
                                         }
-                                    }).then(callback);
-                                }}
-                            ></IssueCard>
-                        ))}
+                                        axios.delete('/api/solveIssue', {
+                                            headers: {
+                                                "Content-Type": "application/json",
+                                                "issueurl": issueUrl,
+                                                "username": userNameValue
+                                            }
+                                        }).then(callback);
+                                    }}
+                                ></IssueCard>
+                            ))}
                     </div>
                 );
             })
