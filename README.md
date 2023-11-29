@@ -2,11 +2,15 @@
 
 GFI is a platform that consolidates good first issues from various GitHub repositories, providing a centralized location to easily track and manage these opportunities for contribution.
 
-## Features
+## Look and Feel of the website
 
-1. You can keep a track of the issues that you have already considered by marking them down.
-2. You can add new repositories for the site to track for Good First Issues.
 
+
+##Setting Up
+First we need to clone the repo to a desired folder:
+```sh
+git clone https://github.com/AviralSingh-code/gfi-clone.git
+```
 ```sh
 npx create-turbo@latest
 ```

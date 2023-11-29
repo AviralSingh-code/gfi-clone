@@ -80,7 +80,7 @@ function StateOne(props)
             // backgroundColor: "#E0F4FF"
           }}>
             <Typography textAlign={"center"} variant="body2" color="textSecondary" align="center">
-              © {new Date().getFullYear()} Course Selling Website. All rights reserved.
+              © {new Date().getFullYear()} Good First Issue Website. All rights reserved.
             </Typography>
           </footer>
         </Container>
@@ -155,7 +155,7 @@ function StateTwo(props)
             // backgroundColor: "#E0F4FF"
           }}>
             <Typography textAlign={"center"} variant="body2" color="textSecondary" align="center">
-              © {new Date().getFullYear()} Course Selling Website. All rights reserved.
+              © {new Date().getFullYear()} Good First Issue Website. All rights reserved.
             </Typography>
           </footer>
         </Container>
