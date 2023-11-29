@@ -1,10 +1,11 @@
-# Turborepo starter
+# GFI
 
-This is an official starter Turborepo.
+GFI is a platform that consolidates good first issues from various GitHub repositories, providing a centralized location to easily track and manage these opportunities for contribution.
 
-## Using this example
+## Features
 
-Run the following command:
+1. You can keep a track of the issues that you have already considered by marking them down.
+2. You can add new repositories for the site to track for Good First Issues.
 
 ```sh
 npx create-turbo@latest
