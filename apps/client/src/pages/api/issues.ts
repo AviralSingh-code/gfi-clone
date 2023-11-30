@@ -3,11 +3,6 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import axios from "axios";
 import { Issue } from 'db';
 
-// type Data = {
-//   name: string
-// }
-
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -53,7 +48,4 @@ export default async function handler(
         res.json({issues});
     }
 
-    
-
-    // res.json(hold);
 }
