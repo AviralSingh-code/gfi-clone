@@ -60,13 +60,12 @@ Move to the app folder:
 cd apps
 ```
 
-Move to the app folder:
+Move to the client folder:
 ```sh
 cd client
 ```
 
 Run the following command:
-Move to the app folder:
 ```sh
 npm run dev
 ```
